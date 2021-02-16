@@ -59,7 +59,7 @@ namespace ScandicHotelDB
 
         private static void ReadSingleRow(IDataRecord record)
         {
-            Console.WriteLine(string.Format("{0}, {1}, {2}", record[0], record[1], record[2]));
+            Console.WriteLine(string.Format("{0}, {1}, {2}, {3}", record[0], record[1], record[2], record[3]));
         }
 
 

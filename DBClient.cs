@@ -8,6 +8,8 @@ namespace ScandicHotelDB
 {
     public class DBClient
     {
+        
+        
         //DBClientExecuteNonQuery dbClientExecuteNonQuery = new DBClientExecuteNonQuery();
         //DBclientSqlDataReader dbclientSqlDataReader = new DBclientSqlDataReader();
 
