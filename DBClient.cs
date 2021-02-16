@@ -14,22 +14,22 @@ namespace ScandicHotelDB
             // queryString => SQL - string eks: delete from Team where id = 44
             //connectionString => Connetion String til databasen se i egenskaber for databasen
 
-            string queryString = "Select * From Hotel";
+            string queryString = "Delete from Hotel where Hotel_No = 101";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
-                //command.ExecuteNonQuery();
-                SqlDataReader reader = command.ExecuteReader();
+                command.ExecuteNonQuery();
+                //SqlDataReader reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    for (int i = 0; i < reader.FieldCount; i++)
-                    {
-                        Console.WriteLine(reader.GetValue(i));
-                    }
-                    Console.WriteLine();
-                }
+               // while (reader.Read())
+               // {
+               //     for (int i = 0; i < reader.FieldCount; i++)
+               //     {
+                 //       Console.WriteLine(reader.GetValue(i));
+                 //   }
+                 //   Console.WriteLine();
+               // }
             }
         }
     }
