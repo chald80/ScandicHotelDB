@@ -21,7 +21,7 @@ namespace ScandicHotelDB
             Console.WriteLine("Guest DataBase");
             reader.DbReader("select * from Guest");
             //NonQuery.DbQuery("INSERT INTO Hotel VALUES (101,'The Pope','Vaticanstreet 1 1111 Bishopcity')");
-
+            
             Console.WriteLine();
 
         }

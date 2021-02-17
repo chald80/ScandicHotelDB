@@ -1,4 +1,12 @@
-﻿INSERT INTO Hotel VALUES (1,'The Pope','Vaticanstreet 1 1111 Bishopcity'); 
+﻿Create DataBase
+
+CREATE TABLE Hotel( Hotel_No int NOT NULL PRIMARY KEY, Name VARCHAR(30) NOT NULL, Address VARCHAR(50) NOT NULL ); 
+CREATE TABLE Room( Room_No int NOT NULL, Hotel_No int NOT NULL, Types CHAR(1) DEFAULT 'S', Price FLOAT, CONSTRAINT checkType CHECK (Types IN ('D','F','S') OR Types IS NULL), CONSTRAINT checkPrice CHECK (price BETWEEN 0 AND 9999), FOREIGN KEY (Hotel_No) REFERENCES Hotel (Hotel_No) ON UPDATE CASCADE ON DELETE NO ACTION, Primary KEY (Room_No, Hotel_No) ); 
+CREATE TABLE Guest ( Guest_No int NOT NULL PRIMARY KEY, Name VARCHAR(30) NOT NULL, Address VARCHAR(50) NOT NULL ); 
+CREATE TABLE Booking( Booking_id int IDENTITY(1,1) NOT NULL PRIMARY KEY, Hotel_No int NOT NULL, Guest_No int NOT NULL, Date_From DATE NOT NULL, Date_To DATE NOT NULL, Room_No int NOT NULL, FOREIGN KEY(Guest_No) REFERENCES Guest(Guest_No), FOREIGN KEY(Room_No, Hotel_No) REFERENCES Room(Room_No, Hotel_No) ); 
+ALTER TABLE Booking ADD CONSTRAINT incorrect_dates CHECK ((Date_To > Date_From) AND (Date_From <= '2018-04-04'));
+
+INSERT INTO Hotel VALUES (1,'The Pope','Vaticanstreet 1 1111 Bishopcity'); 
 INSERT INTO Hotel VALUES (2,'Lucky Star','Lucky Road 12 2222 Hometown'); 
 INSERT INTO Hotel VALUES (3,'Discount','Inexpensive Road 7 3333 Cheaptown'); 
 INSERT INTO Hotel VALUES (4,'deLuxeCapital','Luxury Road 99 4444 Luxus'); 
@@ -23,13 +31,13 @@ INSERT INTO Room VALUES (12,2,'S',180);
 INSERT INTO Room VALUES (21,2,'F',300); 
 INSERT INTO Room VALUES (22,2,'F',300); 
 INSERT INTO Room VALUES (1,3,'D',175); 
-INSERT INTO Room VALUES( 2,3,'D',180); 
-INSERT INTO Room VALUES(11,3,'S',100); 
-INSERT INTO Room VALUES(21,3,'S',100); 
-INSERT INTO Room VALUES(31,3,'F',200); 
-INSERT INTO Room VALUES(32,3,'F',230); 
-INSERT INTO Room VALUES( 1,4,'D',500); 
-INSERT INTO Room VALUES( 2,4,'D',550); 
+INSERT INTO Room VALUES ( 2,3,'D',180); 
+INSERT INTO Room VALUES (11,3,'S',100); 
+INSERT INTO Room VALUES (21,3,'S',100); 
+INSERT INTO Room VALUES (31,3,'F',200); 
+INSERT INTO Room VALUES (32,3,'F',230); 
+INSERT INTO Room VALUES (1,4,'D',500); 
+INSERT INTO Room VALUES (2,4,'D',550); 
 INSERT INTO Room VALUES( 3,4,'D',550); 
 INSERT INTO Room VALUES(11,4,'S',350); 
 INSERT INTO Room VALUES(12,4,'S',360); 
@@ -146,4 +154,17 @@ INSERT INTO Booking VALUES(7,26,'2011-02-27','2011-02-28',2);
 INSERT INTO Booking VALUES(7,27,'2011-02-28','2011-03-01',3); 
 INSERT INTO Booking VALUES(7,28,'2011-02-28','2011-03-02',4); 
 INSERT INTO Booking VALUES(7,29,'2011-03-01','2011-02-03',11); 
-INSERT INTO Booking VALUES(7,30,'2011-03-02','2011-02-06',21);
+INSERT INTO Booking VALUES(7,30,'2011-03-02','2011-02-06',21
+
+
+Select * From Hotel
+
+Select * From Hotel where Hotel_No = 4
+
+INSERT INTO Hotel VALUES (101,'The Pope','Vaticanstreet 1 1111 Bishopcity)
+
+Delete from Hotel where Hotel_No = 101 
+
+
+
+
