@@ -11,8 +11,7 @@ namespace ScandicHotelDB
         public void DbQuery(string QueryString)
         {
             string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScandicHotelDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            // queryString => SQL - string eks: delete from Team where id = 44
-            //connectionString => Connetion String til databasen se i egenskaber for databasen
+          
 
             string queryString = QueryString;
             using (SqlConnection connection = new SqlConnection(connectionString))
