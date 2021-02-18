@@ -6,6 +6,12 @@ CREATE TABLE Guest ( Guest_No int NOT NULL PRIMARY KEY, Name VARCHAR(30) NOT NUL
 CREATE TABLE Booking( Booking_id int IDENTITY(1,1) NOT NULL PRIMARY KEY, Hotel_No int NOT NULL, Guest_No int NOT NULL, Date_From DATE NOT NULL, Date_To DATE NOT NULL, Room_No int NOT NULL, FOREIGN KEY(Guest_No) REFERENCES Guest(Guest_No), FOREIGN KEY(Room_No, Hotel_No) REFERENCES Room(Room_No, Hotel_No) ); 
 ALTER TABLE Booking ADD CONSTRAINT incorrect_dates CHECK ((Date_To > Date_From) AND (Date_From <= '2018-04-04'));
 
+create new table
+CREATE TABLE Facilities( Facilities_No int NOT NULL, Hotel_No int NOT NULL, Types CHAR(1) DEFAULT 'S', Price FLOAT, CONSTRAINT facilitiesType CHECK (Types IN ('Spa','RoomService','Massage') OR Types IS NULL), CONSTRAINT facilitiesPrice CHECK (price BETWEEN 0 AND 9999), FOREIGN KEY (Hotel_No) REFERENCES Hotel (Hotel_No) ON UPDATE CASCADE ON DELETE NO ACTION, Primary KEY (Facilities_No, Hotel_No) );
+ALTER TABLE Facilities ADD CONSTRAINT incorrect_dates CHECK ((Date_To > Date_From) AND (Date_From <= '2018-04-04'));
+
+
+
 INSERT INTO Hotel VALUES (1,'The Pope','Vaticanstreet 1 1111 Bishopcity'); 
 INSERT INTO Hotel VALUES (2,'Lucky Star','Lucky Road 12 2222 Hometown'); 
 INSERT INTO Hotel VALUES (3,'Discount','Inexpensive Road 7 3333 Cheaptown'); 
