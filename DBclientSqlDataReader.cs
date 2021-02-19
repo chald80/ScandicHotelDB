@@ -8,16 +8,16 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace ScandicHotelDB
 {
-    class DBclientSqlDataReader 
+    class DBclientSqlDataReader
     {
 
-     
+
 
         public void DbReader(string QueryString)
         {
             string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScandicHotelDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            
-            
+
+
             string queryString = QueryString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -28,68 +28,28 @@ namespace ScandicHotelDB
 
                 while (reader.Read())
                 {
-                    
-                    switch (reader.FieldCount)
-                    {
-                        case 0:
-                            Console.WriteLine("No Rows");
-                            break;
-                        case 1:
-                            ReadSingleRow1((IDataRecord)reader);
-                            break;
-                        case 2:
-                            ReadSingleRow2((IDataRecord)reader);
-                            break;
-                        case 3:
-                            ReadSingleRow3((IDataRecord)reader);
-                            break;
-                        case 4:
-                            ReadSingleRow4((IDataRecord)reader);
-                            break;
-                        case 5:
-                            ReadSingleRow5((IDataRecord)reader);
-                            break;
-                        default:
-                            Console.WriteLine("To Many Rows");
-                            break;
-                        
-                    }
+                    ReadSingleRow((IDataRecord)reader);
                 }
 
                 //Call Close when done reading.
                 reader.Close();
 
-                
             }
 
         }
-        
 
-        private static void ReadSingleRow1(IDataRecord record)
+        static void ReadSingleRow(IDataRecord record)
         {
-            Console.WriteLine(string.Format("{0}", record[0]));
+            for (int i = 0; i < record.FieldCount; i++) 
+            {
+                Console.Write(string.Format("{​​0}​​", record[i]));
+            }
+            Console.WriteLine();
+
         }
 
-        private static void ReadSingleRow2(IDataRecord record)
-        {
-            Console.WriteLine(string.Format("{0}, {1}", record[0], record[1]));
-        }
 
-        private static void ReadSingleRow3(IDataRecord record)
-        {
-            Console.WriteLine(string.Format("{0}, {1}, {2}", record[0], record[1], record[2]));
-        }
 
-        private static void ReadSingleRow4(IDataRecord record)
-        {
-            Console.WriteLine(string.Format("{0}, {1}, {2}, {3}", record[0], record[1], record[2], record[3]));
-        }
 
-        private static void ReadSingleRow5(IDataRecord record)
-        {
-            Console.WriteLine(string.Format("{0}, {1}, {2}, {3}, {4}", record[0], record[1], record[2], record[3], record[4]));
-        }
-
-        
     }
 }
