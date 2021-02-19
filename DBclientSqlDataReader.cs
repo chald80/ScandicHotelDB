@@ -24,7 +24,6 @@ namespace ScandicHotelDB
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                int count = reader.FieldCount;
 
                 while (reader.Read())
                 {
@@ -42,7 +41,7 @@ namespace ScandicHotelDB
         {
             for (int i = 0; i < record.FieldCount; i++) 
             {
-                Console.Write(string.Format("{​​0}​​", record[i]));
+                Console.Write("{0},    ", record[i]);
             }
             Console.WriteLine();
 
