@@ -55,7 +55,7 @@ namespace ScandicHotelDB
         {
             for (int i = 0; i < record.FieldCount; i++)
             {
-                Console.Write("{0,-10}", record[i]);
+                Console.Write("{0,-18}", record[i]);
             }
             Console.WriteLine();
 
