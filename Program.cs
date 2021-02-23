@@ -12,8 +12,8 @@ namespace ScandicHotelDB
 
             Console.WriteLine("Hotel DataBase");
             DB.DbReader("Select * From Hotel");
-            // Console.WriteLine("Booking DataBase");
-            // DB.DbReader("Select * From Booking");
+            //Console.WriteLine("Booking DataBase");
+            //DB.DbReader("Select * From Booking");
             // Console.WriteLine("Room DataBase");
             // DB.DbReader("select * from Room");
             // Console.WriteLine("Guest DataBase");
