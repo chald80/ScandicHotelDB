@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
 
 
-namespace ScandicHotelDB
+/*namespace ScandicHotelDB
 {
     class DBclientSqlDataReader
     {
@@ -51,4 +51,5 @@ namespace ScandicHotelDB
 
 
     }
-}
+}*/
+
