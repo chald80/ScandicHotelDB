@@ -9,8 +9,6 @@ namespace ScandicHotelDB
         {
             DBClient DB = new DBClient();
             
-            // DBclientSqlDataReader reader = new DBclientSqlDataReader();
-            // DBClientExecuteNonQuery nonQuery = new DBClientExecuteNonQuery();
 
             Console.WriteLine("Hotel DataBase");
             DB.DbReader("Select * From Hotel");
@@ -20,11 +18,14 @@ namespace ScandicHotelDB
             // DB.DbReader("select * from Room");
             // Console.WriteLine("Guest DataBase");
             // DB.DbReader("select * from Guest");
+            Console.WriteLine("Hotel DataBase after insert");
             DB.DbQuery("INSERT INTO Hotel VALUES (101,'The Pope','Vaticanstreet 1 1111 Bishopcity')");
-            Console.WriteLine("Hotel DataBase");
             DB.DbReader("Select * From Hotel");
+            Console.WriteLine("Hotel DataBase after delete");
             DB.DbQuery("Delete from Hotel where Hotel_No = 101 ");
             DB.DbReader("Select * From Hotel");
+            Console.WriteLine("Hotel DataBase done");
+
 
 
 

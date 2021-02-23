@@ -15,7 +15,6 @@ namespace ScandicHotelDB
 
         public void DbQuery(string QueryString)
         {
-            //string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScandicHotelDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 
             string queryString = QueryString;
@@ -31,7 +30,6 @@ namespace ScandicHotelDB
 
         public void DbReader(string QueryString)
         {
-            //string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScandicHotelDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 
             string queryString = QueryString;
@@ -57,7 +55,7 @@ namespace ScandicHotelDB
         {
             for (int i = 0; i < record.FieldCount; i++)
             {
-                Console.Write("{0},    ", record[i]);
+                Console.Write("{0,-10}", record[i]);
             }
             Console.WriteLine();
 
