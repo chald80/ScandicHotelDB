@@ -21,6 +21,7 @@ namespace ScandicHotelDB
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
                 command.ExecuteNonQuery();
+                Console.WriteLine(queryString);
 
             }
 
@@ -36,6 +37,7 @@ namespace ScandicHotelDB
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
+                Console.WriteLine(queryString);
 
                 while (reader.Read())
                 {
