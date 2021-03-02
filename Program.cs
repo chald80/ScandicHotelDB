@@ -12,10 +12,6 @@ namespace ScandicHotelDB
             DB.Start();
             
 
-
-
-            
-
         }
     }
 }
