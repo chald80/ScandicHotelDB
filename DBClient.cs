@@ -10,6 +10,8 @@ namespace ScandicHotelDB
     class DBClient
     {
 
+
+
         string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScandicHotelDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public void DbQuery(string QueryString)
