@@ -8,7 +8,6 @@ namespace ScandicHotelDB
         static void Main(string[] args)
         {
             DBClient DB = new DBClient();
-            
             DB.Start();
             
 

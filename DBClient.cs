@@ -86,12 +86,7 @@ namespace ScandicHotelDB
 
 
 
-
-
         }
-
-
-
 
 
 
